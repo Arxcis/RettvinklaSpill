@@ -26,11 +26,40 @@ screen.setup(600, 600)              # Størrelsen på vinduet
 screen.screensize(550, 550)         # Størrelsen på "spillskjermen"
 screen.bgcolor("lightblue")
 
-# ----------------- MAIN ------------------------
+# ---- Variabler ----
+death = False           # Denne holder liv i while loopen
 
+# ---- Funksjoner ----
+
+
+def move_left():
+    player1.lt(30)
+
+
+def move_right():
+    player1.rt(30)
+
+
+def main_game():
+    # ----------------- MAIN ------------------------
+
+    # ---- Keybinds ----
+    screen.onkey(move_left, "Left")
+    screen.onkey(move_right, "Right")
+    screen.listen()
+
+    # ---- While loop ----
+    while death is False:
+        player1.forward(2)
+
+    # ---- While loop slutt ----
+
+
+main_game()
 screen.mainloop()
 
 
-"""
-    session  23:04 - 23:14       jonas
-"""
+""" Sessions:
+
+    23:25 - 23:36       jonas
+    23:04 - 23:14       jonas   """

@@ -28,6 +28,7 @@ screen.bgcolor("lightblue")
 
 # ---- Variabler ----
 death = False           # Denne holder liv i while loopen
+victory = False
 
 # ---- Funksjoner ----
 
@@ -42,14 +43,14 @@ def move_right():
 
 def main_game():
     # ----------------- MAIN ------------------------
-
+    global death, victory
     # ---- Keybinds ----
     screen.onkey(move_left, "Left")
     screen.onkey(move_right, "Right")
     screen.listen()
 
     # ---- While loop ----
-    while death is False:
+    while death is False or victory is False:
         player1.forward(2)
 
     # ---- While loop slutt ----

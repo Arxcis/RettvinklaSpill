@@ -22,17 +22,10 @@ player1.shape("arrow")
 player1.penup()
 
 # ---- Init screen ----
-screen.setup(600, 600)              # Størrelsen på vinduet
-screen.screensize(550, 550)         # Størrelsen på "spillskjermen"
 screen.bgcolor("lightblue")
 
-# ---- Variabler ----
-death = False           # Denne holder liv i while loopen
-victory = False
 
 # ---- Funksjoner ----
-
-
 def move_left():
     player1.lt(30)
 
@@ -41,9 +34,12 @@ def move_right():
     player1.rt(30)
 
 
+# ---- Main ----
 def main_game():
-    # ----------------- MAIN ------------------------
-    global death, victory
+    # ---- Variabler ----
+    death = False
+    victory = False
+
     # ---- Keybinds ----
     screen.onkey(move_left, "Left")
     screen.onkey(move_right, "Right")
@@ -60,7 +56,7 @@ main_game()
 screen.mainloop()
 
 
-""" Sessions:
-
-    23:25 - 23:36       jonas
-    23:04 - 23:14       jonas   """
+#    Sessions:
+#
+#    23:25 - 23:36       jonas
+#    23:04 - 23:14       jonas   

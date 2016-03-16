@@ -11,52 +11,34 @@
 
 # ---- Importer nødvendige bibliotek ----
 from turtle import *
+import math
 
 # ---- Init objekter ----
-player1 = Turtle()
-screen = Screen()
+p1 = Turtle()
+s = Screen()
 
 # ---- Init player1 ----
-player1.color("hotpink")
-player1.shape("arrow")
-player1.penup()
+p1.color("hotpink")
+p1.shape("arrow")
+p1.penup()
+p1.speed(3)
 
 # ---- Init screen ----
-screen.bgcolor("lightblue")
-
+s.bgcolor("lightblue")
 
 # ---- Funksjoner ----
-def move_left():
-    player1.lt(30)
+def on_right_click(x, y):
+	angle = p1.towards(x, y)
+	p1.seth(angle)
+	p1.goto(x, y)
 
+s.onclick(on_right_click)
+s.listen()
 
-def move_right():
-    player1.rt(30)
-
-
-# ---- Main ----
-def main_game():
-    # ---- Variabler ----
-    death = False
-    victory = False
-
-    # ---- Keybinds ----
-    screen.onkey(move_left, "Left")
-    screen.onkey(move_right, "Right")
-    screen.listen()
-
-    # ---- While loop ----
-    while death is False or victory is False:
-        player1.forward(2)
-
-    # ---- While loop slutt ----
-
-
-main_game()
-screen.mainloop()
+s.mainloop()
 
 
 #    Sessions:
-#
+#    15:07 - 15:16       jonas
 #    23:25 - 23:36       jonas
 #    23:04 - 23:14       jonas   

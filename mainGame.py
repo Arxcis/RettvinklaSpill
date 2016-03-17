@@ -160,6 +160,7 @@ def show_data(a, k1, k2, h, sin, rad, grad):
 
 def on_right_click(x, y):
     
+    s.title("Got click at:     {0}, {1}     (x,y)".format(x, y))
     a, k1, k2, h, v_sin, v_rad, v_grad = calculate_data(x, y)
     show_data(a, k1, k2, h, v_sin, v_rad, v_grad)
     
